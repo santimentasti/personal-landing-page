@@ -1,0 +1,30 @@
+{
+  "title": "Nota de prueba: tres cambios que una pyme debería mirar esta semana",
+  "slug": "nota-de-prueba-tres-cambios",
+  "summary": "Ejemplo de nota generada en modo de prueba. Sirve para revisar el diseño; el contenido no es real.",
+  "intro_md": "Esta nota existe para probar la plantilla del blog. Los tres ítems de abajo son ficticios y solo muestran cómo se ve una nota real: un resumen corto de lo que pasó y una línea sobre qué significa para una pyme.",
+  "items": [
+    {
+      "headline": "Un proveedor de facturación electrónica abre su API a integraciones directas",
+      "source_name": "Fuente de ejemplo",
+      "url": "https://example.com/facturacion-api",
+      "summary_md": "El proveedor publicó documentación para conectar sistemas externos con su plataforma de facturación. Hasta ahora la única forma de cargar comprobantes era manual o por planilla.",
+      "pyme_md": "Si facturás con ese sistema, ya no hace falta que alguien cargue las facturas a mano desde el sistema de ventas. Es el tipo de conexión que se hace una vez y se olvida."
+    },
+    {
+      "headline": "Los modelos de lenguaje bajan de precio por tercera vez en el año",
+      "source_name": "Otra fuente de ejemplo",
+      "url": "https://example.com/precios-modelos",
+      "summary_md": "Varios proveedores anunciaron reducciones de precio para el uso de sus modelos por API. La baja acumulada en el año supera la mitad del precio original, según la fuente.",
+      "pyme_md": "Automatizar la lectura de mails, pedidos o remitos con un modelo de lenguaje hoy cuesta centavos por documento. El costo ya no es la excusa; lo que falta es conectar el modelo con tus sistemas."
+    },
+    {
+      "headline": "El gobierno simplifica un trámite para pymes que exportan servicios",
+      "source_name": "Medio argentino de ejemplo",
+      "url": "https://example.com/tramite-pymes",
+      "summary_md": "Un decreto elimina un paso presencial en la inscripción de exportadores de servicios. El trámite pasa a ser completamente digital.",
+      "pyme_md": "Menos papeles para quien vende software o servicios afuera. Si estabas postergando la inscripción por el trámite, es buen momento para retomarla."
+    }
+  ],
+  "closing_md": "Mañana, más. Si alguna de estas noticias te toca de cerca y no sabés por dónde empezar, escribinos."
+}

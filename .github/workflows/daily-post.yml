@@ -1,0 +1,78 @@
+name: Daily post
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 08:00 Buenos Aires (UTC-3), every day
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate today's post even if it exists"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate today's post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Falta el secreto ANTHROPIC_API_KEY en el repositorio."
+            exit 1
+          fi
+          FORCE=""
+          if [ "${{ inputs.force }}" = "true" ]; then FORCE="--force"; fi
+          python scripts/generate_post.py $FORCE
+
+      - name: Commit and push
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog sitemap.xml
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nada nuevo que publicar."
+            exit 0
+          fi
+          TODAY="$(TZ=America/Argentina/Buenos_Aires date +%F)"
+          git commit -m "blog: nota del ${TODAY}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: generate
+    if: needs.generate.outputs.changed == 'true'
+    # Pushes made with GITHUB_TOKEN do not trigger other workflows, so we call the deploy directly.
+    uses: ./.github/workflows/deploy-pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}} | Caudal</title>
+  <meta name="description" content="{{summary}}">
+  <link rel="canonical" href="{{url}}">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Caudal · Blog" href="../feed.xml">
+  <meta name="theme-color" content="#0E6E7C">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Caudal">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{summary}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{site_url}}assets/og-image.svg">
+  <meta property="article:published_time" content="{{date_iso}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Ir al contenido</a>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="../../" aria-label="Caudal, inicio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M4 20c4-6 8-6 12 0s8 6 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M4 12c4-6 8-6 12 0s8 6 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+      </svg>
+      <span class="brand-name">Caudal</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="../../#servicios">Servicios</a>
+      <a href="../../#como-trabajamos">Cómo trabajamos</a>
+      <a href="../../#resultados">Resultados</a>
+      <a href="../">Blog</a>
+      <a href="../../#contacto">Contacto</a>
+      <a class="btn btn-primary btn-sm" href="https://calendly.com/santiagomentasti/30min" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article class="post container narrow">
+    <p class="eyebrow">Notas · <time datetime="{{date_iso}}">{{date_human}}</time></p>
+    <h1>{{title}}</h1>
+    <p class="lead">{{summary}}</p>
+
+    <div class="post-body">
+{{body_html}}
+    </div>
+
+    <aside class="post-cta">
+      <h2>¿Querés que algo así corra solo en tu empresa?</h2>
+      <p>Esta nota la arma una automatización de Caudal todas las mañanas: lee fuentes públicas, resume y publica. Lo mismo se puede hacer con tus pedidos, tus facturas o tus consultas de clientes.</p>
+      <a class="btn btn-primary" href="https://calendly.com/santiagomentasti/30min" target="_blank" rel="noopener">Agendá un diagnóstico gratuito</a>
+    </aside>
+
+    <p class="post-note">Resumen generado automáticamente a partir de las fuentes enlazadas, con un modelo de lenguaje y reglas editoriales propias. Ante cualquier duda, la fuente original manda.</p>
+
+    <nav class="post-nav" aria-label="Navegación de notas">
+      <a class="text-link" href="../">Todas las notas</a>
+      <a class="text-link" href="../../">Volver al inicio</a>
+    </nav>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <div>
+      <span class="brand-name">Caudal</span>
+      <p>Automatización de procesos para pymes · San Isidro, Buenos Aires</p>
+    </div>
+    <nav aria-label="Pie de página">
+      <a href="../../#servicios">Servicios</a>
+      <a href="../">Blog</a>
+      <a href="mailto:santiagomentasti@gmail.com">Email</a>
+      <a href="https://wa.me/5491137989243" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <p class="copyright">© {{year}} Caudal · Santiago Mentasti</p>
+  </div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Caudal · Notas diarias</title>
+<link>https://santimentasti.github.io/personal-landing-page/blog/</link>
+<atom:link href="https://santimentasti.github.io/personal-landing-page/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Lo que pasó en inteligencia artificial y en la economía argentina, explicado para pymes.</description>
+<language>es-AR</language>
+<lastBuildDate>Mon, 14 Sep 2026 22:39:56 -0300</lastBuildDate>
+
+</channel>
+</rss>
