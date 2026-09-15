@@ -37,11 +37,11 @@ scripts/humanizer/         SKILL.md vendoreado de blader/humanizer (MIT)
 
 ## Puesta en marcha (una sola vez)
 
-1. **Secreto**: en el repo, Settings → Secrets and variables → Actions → New repository secret: `ANTHROPIC_API_KEY`.
-2. **Pages**: Settings → Pages → Source: **GitHub Actions**.
-3. **Permisos**: Settings → Actions → General → Workflow permissions: **Read and write permissions**.
-4. Mergear esta rama a `main`. El push a `main` dispara el deploy de la landing.
-5. Actions → **Daily post** → Run workflow, para publicar la primera nota sin esperar al cron.
+1. **Permisos**: Settings → Actions → General → Workflow permissions: **Read and write permissions**. Sin esto el job diario no puede commitear la nota.
+2. **Secreto**: Settings → Secrets and variables → Actions → New repository secret: `ANTHROPIC_API_KEY`. Solo hace falta para el blog; la landing se publica igual sin él.
+3. Actions → **Daily post** → Run workflow, para publicar la primera nota sin esperar al cron.
+
+Pages no hace falta activarlo a mano: el workflow de deploy usa `enablement: true`, así que la primera corrida lo prende y deja el origen en GitHub Actions. Si esa corrida falla con `Get Pages site failed`, activalo vos en Settings → Pages → Source: **GitHub Actions** y volvé a correr el workflow.
 
 Después de eso, el job corre solo todos los días a las 08:00 (hora de Buenos Aires), commitea la nota en `main` y vuelve a desplegar. Si un día no hay suficientes noticias (menos de 3 ítems en las últimas 36 h) no publica nada.
 
