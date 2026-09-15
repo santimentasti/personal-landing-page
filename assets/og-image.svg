@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1200" height="14" fill="#0E6E7C"/>
+  <g transform="translate(80 90)">
+    <rect width="72" height="72" rx="16" fill="#0E6E7C"/>
+    <path d="M12 46c9-13 16-13 24 0s15 13 24 0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M12 28c9-13 16-13 24 0s15 13 24 0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".5"/>
+  </g>
+  <text x="172" y="145" font-family="Inter, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#14213D">Caudal</text>
+  <text x="80" y="290" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#14213D">Automatizamos los procesos</text>
+  <text x="80" y="365" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#14213D">que le cuestan horas a tu pyme.</text>
+  <text x="80" y="450" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" fill="#5B6B73">Facturación, stock y atención al cliente conectados.</text>
+  <text x="80" y="495" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" fill="#5B6B73">Menos carga manual, menos errores, menos costo.</text>
+  <rect x="80" y="545" width="420" height="4" fill="#0E6E7C"/>
+</svg>
