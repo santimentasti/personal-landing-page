@@ -31,6 +31,10 @@ jobs:
           ref: main
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Turns Pages on and sets the source to GitHub Actions the first time
+          # this runs, so the repo needs no manual toggle in Settings.
+          enablement: true
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
